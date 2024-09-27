@@ -2,7 +2,6 @@
 
 import React, { useEffect, useRef, useState } from 'react'
 import { CldImage } from 'next-cloudinary'
-import axios from 'axios';
 
 const socialFormats = {
   "Instagram Square (1:1)": { width: 1080, height: 1080, aspectRatio: "1:1" },
@@ -48,8 +47,7 @@ function social() {
       if (!response.ok) throw new Error("Failed to upload image");
 
       const data = await response.json();
-      // setUploadedImage(data.public_id);
-      setUploadedImage(data.publicId);
+      setUploadedImage(data.public_id);
 
 
     } catch (error) {
